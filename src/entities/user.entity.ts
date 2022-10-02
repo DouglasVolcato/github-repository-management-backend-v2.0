@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import bcrypt from 'bcryptjs';
+import { hashSync } from 'bcryptjs';
 
 export default class User {
   id: string;
@@ -27,7 +27,7 @@ export default class User {
   }
 
   encryptPassWord() {
-    return bcrypt.hashSync(this.password, 10);
+    return hashSync(this.password, 10);
   }
 
   getUser() {
