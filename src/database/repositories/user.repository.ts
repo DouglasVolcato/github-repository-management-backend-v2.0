@@ -1,25 +1,25 @@
 import { userModel } from '../Schemas/user.Schema.js';
 
 export class UserRepository {
-  async create(userBody) {
+  static async create(userBody) {
     return await userModel.create(userBody);
   }
 
-  async getByEmail(userEmail) {
+  static async getByEmail(userEmail) {
     return await userModel
       .findOne({ email: userEmail })
       .select('-securityKeys');
   }
 
-  async getById(userId) {
+  static async getById(userId) {
     return await userModel.findOne({ id: userId });
   }
 
-  async getAll() {
+  static async getAll() {
     return await userModel.find().select('-securityKeys');
   }
 
-  async update(userId, userBody) {
+  static async update(userId, userBody) {
     return await userModel
       .findOneAndUpdate({ id: userId }, userBody, {
         new: true,
@@ -27,7 +27,7 @@ export class UserRepository {
       .select('-securityKeys');
   }
 
-  async delete(userId) {
+  static async delete(userId) {
     return await userModel
       .findOneAndDelete({ id: userId })
       .select('-securityKeys');
