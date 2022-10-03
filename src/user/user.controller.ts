@@ -21,6 +21,7 @@ interface bodyUserUpdate {
   email?: string;
   password?: string;
   photo?: string;
+  userId: string;
 }
 
 @Controller('user')
@@ -136,9 +137,9 @@ export class UserController {
   }
 
   @Put('update-user')
-  async updateUser(@Param('id') id: string, @Body() body: bodyUserUpdate) {
+  async updateUser(@Body() body: bodyUserUpdate) {
     try {
-      const userId = id;
+      const userId = body.userId;
       const userBody = body;
 
       if (!userId || !userBody) {
