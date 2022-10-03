@@ -1,4 +1,4 @@
-import bcrypt from 'bcryptjs';
+import { hashSync } from 'bcryptjs';
 
 export default class SecurityKey {
   reference: string;
@@ -18,7 +18,7 @@ export default class SecurityKey {
   getKey() {
     return {
       reference: this.reference,
-      key: bcrypt.hashSync(this.key, 10),
+      key: hashSync(this.key, 10),
     };
   }
 }
