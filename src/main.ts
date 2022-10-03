@@ -10,9 +10,9 @@ async function bootstrap() {
   MongoDbConnection.connectDb();
 
   const config = new DocumentBuilder()
-    .setTitle('Expense App')
-    .setDescription('CRUD complete for financial management.')
-    .setVersion('1.0')
+    .setTitle('Repository Management API')
+    .setDescription('Repository management service for Github repositories.')
+    .setVersion('2.0')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, document);
