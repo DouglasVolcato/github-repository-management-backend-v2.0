@@ -1,4 +1,5 @@
-import { Module } from '@nestjs/common';
+import { Module, MiddlewareConsumer } from '@nestjs/common';
+import { Middleware } from 'src/middleware';
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
 
@@ -6,4 +7,8 @@ import { UserService } from './user.service';
   controllers: [UserController],
   providers: [UserService],
 })
-export class UserModule {}
+export class UserModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(Middleware).forRoutes('user/delete-user');
+  }
+}
