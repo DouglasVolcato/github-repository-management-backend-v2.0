@@ -1,7 +1,7 @@
 import { userModel } from '../Schemas/user.Schema.js';
 
 export class RepoRepository {
-  async create(userId, repoBody) {
+  static async create(userId, repoBody) {
     return await userModel
       .findOneAndUpdate(
         { id: userId },
@@ -11,11 +11,11 @@ export class RepoRepository {
       .select('-securityKeys');
   }
 
-  async getAll(userId) {
+  static async getAll(userId) {
     return await userModel.findOne({ id: userId }).select('-securityKeys');
   }
 
-  async update(userId, nameRepo, repoBody) {
+  static async update(userId, nameRepo, repoBody) {
     await userModel
       .findOneAndUpdate(
         { id: userId },
@@ -32,7 +32,7 @@ export class RepoRepository {
       .select('-securityKeys');
   }
 
-  async delete(userId, nameRepo) {
+  static async delete(userId, nameRepo) {
     return await userModel
       .findOneAndUpdate(
         { id: userId },
