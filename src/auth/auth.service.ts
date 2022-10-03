@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { AuthRepository } from 'src/database/repositories/auth.repository';
-import bcrypt from 'bcryptjs';
+import { compareSync } from 'bcryptjs';
 import * as jwt from 'jsonwebtoken';
 
 @Injectable()
@@ -14,7 +14,7 @@ export class AuthService {
   }
 
   verifyPassword(password, user) {
-    const result = bcrypt.compareSync(password, user.password);
+    const result = compareSync(password, user.password);
     return result === true ? true : false;
   }
 
