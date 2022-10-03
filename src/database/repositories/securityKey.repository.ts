@@ -1,7 +1,7 @@
 import { userModel } from '../Schemas/user.Schema.js';
 
 export class SecurityKeyRepository {
-  async addKeys(userEmail, arrKeys) {
+  static async addKeys(userEmail, arrKeys) {
     return await userModel
       .findOneAndUpdate(
         { email: userEmail },
@@ -11,11 +11,11 @@ export class SecurityKeyRepository {
       .select('-securityKeys');
   }
 
-  async getKeys(userEmail) {
+  static async getKeys(userEmail) {
     return await userModel.findOne({ email: userEmail });
   }
 
-  async editPassword(userEmail, newPassword) {
+  static async editPassword(userEmail, newPassword) {
     return await userModel
       .findOneAndUpdate(
         { email: userEmail },
