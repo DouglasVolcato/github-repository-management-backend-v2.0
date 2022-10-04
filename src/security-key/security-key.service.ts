@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import SecurityKey from 'src/entities/securityKey.entity';
-import { SecurityKeyRepository } from 'src/database/repositories/securityKey.repository';
+import SecurityKey from '../entities/securityKey.entity';
+import { SecurityKeyRepository } from '../database/repositories/securityKey.repository';
 
 @Injectable()
 export class SecurityKeyService {

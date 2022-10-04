@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import repoSchema from './repo.schema.js';
-import securityKey from './securityKey.schema.js';
+import repoSchema from './repo.schema';
+import securityKey from './securityKey.schema';
 
 const userSchema = new mongoose.Schema({
   id: { type: String, required: true, unique: true },

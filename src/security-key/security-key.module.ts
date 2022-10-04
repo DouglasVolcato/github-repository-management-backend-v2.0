@@ -1,7 +1,7 @@
 import { Module, MiddlewareConsumer } from '@nestjs/common';
 import { SecurityKeyController } from './security-key.controller';
 import { SecurityKeyService } from './security-key.service';
-import { Middleware } from 'src/middleware';
+import { Middleware } from '../middleware';
 
 @Module({
   controllers: [SecurityKeyController],

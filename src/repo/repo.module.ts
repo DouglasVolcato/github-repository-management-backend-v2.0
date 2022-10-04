@@ -1,7 +1,7 @@
 import { Module, MiddlewareConsumer } from '@nestjs/common';
 import { RepoController } from './repo.controller';
 import { RepoService } from './repo.service';
-import { Middleware } from 'src/middleware';
+import { Middleware } from '../middleware';
 
 @Module({
   controllers: [RepoController],

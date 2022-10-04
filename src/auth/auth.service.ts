@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { AuthRepository } from 'src/database/repositories/auth.repository';
+import { AuthRepository } from '../database/repositories/auth.repository';
 import { compareSync } from 'bcryptjs';
 import * as jwt from 'jsonwebtoken';
 

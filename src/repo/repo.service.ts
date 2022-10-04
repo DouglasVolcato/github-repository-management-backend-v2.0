@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import Repository from '../entities/repo.entity';
-import { RepoRepository } from 'src/database/repositories/repo.repository';
+import { RepoRepository } from '../database/repositories/repo.repository';
 
 @Injectable()
 export class RepoService {

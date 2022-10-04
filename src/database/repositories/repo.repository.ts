@@ -1,4 +1,4 @@
-import { userModel } from '../Schemas/user.Schema.js';
+import { userModel } from '../schemas/user.schema';
 
 export class RepoRepository {
   static async create(userId, repoBody) {
